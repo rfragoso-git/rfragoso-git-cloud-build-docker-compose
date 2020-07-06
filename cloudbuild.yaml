@@ -1,7 +1,10 @@
 steps:
   - id: "Executando docker build"
-    name: 'gcr.io/ozograf-exemplos/docker'
+    name: 'gcr.io/cloud-builders/docker'
     args:
     - 'build'
     - '-t'
-    - 'gcr.io/ozograf-exemplos/app'
+    - 'gcr.io/$PROJECT_ID/app-mutant:latest'
+    - '.'
+images:
+- 'gcr.io/$PROJECT_ID/app-mutant:latest'
